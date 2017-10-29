@@ -18,11 +18,12 @@ Route::get('/usuarios/nuevo', function () {
 
 Route::get('/usuarios/{name}/{nickname?}', function ($name, $nickname = null) {
 
+	$name = ucfirst($name);
+
 	if ($nickname) {
 		return "El usuario tiene el nombre {$name}, y el nick {$nickname}";
 	}else{
-		return "El usuario tiene el nombre {$name}, y no tiene nick";
+		return "El usuario tiene el nombre {$name}";
 	}
-
 	
 });
